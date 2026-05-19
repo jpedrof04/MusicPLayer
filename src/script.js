@@ -19,6 +19,12 @@ audio.volume = 0.7;
 volumeSlider.addEventListener('input', () => {
   audio.volume = parseFloat(volumeSlider.value);
 });
+bassSlider.addEventListener('input', () => {
+  if (typeof bassFilter !== 'undefined' && bassFilter) bassFilter.gain.value = parseFloat(bassSlider.value);
+});
+trebleSlider.addEventListener('input', () => {
+  if (typeof trebleFilter !== 'undefined' && trebleFilter) trebleFilter.gain.value = parseFloat(trebleSlider.value);
+});
 
 let songs = [];
 let currentIndex = 0;
